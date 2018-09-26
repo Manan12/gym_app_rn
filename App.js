@@ -1,21 +1,29 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
+import Config from 'react-native-config';
+import firebase from 'firebase';
+import LoginForm from './components/LoginForm';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
+
+class App extends Component {
+    componentWillMount() {
+        firebase.initializeApp({
+          apiKey: 'AIzaSyAfrzh2E5uHiBsxXdBAZCOvbnMNKoQ14Fg',
+          authDomain: 'gymapp-657a8.firebaseapp.com',
+          databaseURL: 'https://gymapp-657a8.firebaseio.com',
+          projectId: 'gymapp-657a8',
+          storageBucket: 'gymapp-657a8.appspot.com',
+          messagingSenderId: '70235528306'
+                
+        });
+    }
+    render() {
+        return (
+            <View>
+                <LoginForm />
+            </View>
+        );
+    }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
