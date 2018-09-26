@@ -8,8 +8,9 @@ const TitledInput = ({ label, value, onChangeText, placeholder, secureTextEntry 
 
     return (
         <View style={containerStyle}>
-            <Text style={labelStyle}>{label.toUpperCase()}</Text>
+            <Text style={labelStyle}>{label}</Text>
             <TextInput
+                underlineColorAndroid='transparent'
                 autoCorrect={false}
                 placeholder={placeholder}
                 secureTextEntry={secureTextEntry}
@@ -26,25 +27,35 @@ const styles = {
         paddingRight: 5,
         paddingLeft: 5,
         paddingBottom: 2,
-        color: '#262626',
-        fontSize: 18,
+        color: '#A09FA4',
+        fontSize: 16,
         fontWeight: '200',
-        flex: 1,
-        height: 40
+        borderBottomWidth: 1,
+        borderBottomColor: '#F7F6FC',
+        letterSpacing: 0.5,
+
+        
     },
     labelStyle: {
         fontSize: 12,
-        color: '#7F7D7D',
+        color: '#202021',
         fontWeight: '200',
-        flex: 1
+        fontWeight: 'bold',
+        fontSize: 16,
+        marginBottom: 15
     },
     containerStyle: {
-        height: 45,
-        flexDirection: 'column',
-         alignItems: 'flex-start',
-         width: '100%',
-         borderColor: '#D4D4D4',
-        borderBottomWidth: 1,
+       display: 'flex',
+       flexDirection: 'column',
+       paddingTop: 10,
+       paddingBottom: 15,
+       paddingLeft: 20,
+       paddingRight: 20,
+       width: 450,
+       maxWidth: '100%',
+       alignSelf: 'center'
+       
+       
     }
 };
 
